@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    </head>
+    <body>
+        <script>
+            var input = 'bgvyzdsv'
+            var i = 1;
+            while(true){
+                var hash = CryptoJS.MD5(`${input}${i}`).toString();
+                if(hash.startsWith('000000')){
+                    break;
+                }   
+                i++;
+                if(i > 999999999){
+                    console.log('too big');
+                    break;
+                }
+            }            
+            console.log(i);
+        </script>
+    </body>
+</html>
